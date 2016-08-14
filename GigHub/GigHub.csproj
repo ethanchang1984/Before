@@ -173,9 +173,16 @@
     <Compile Include="Migrations\201608140035582_InitialModel.Designer.cs">
       <DependentUpon>201608140035582_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608140101396_AddGigModel.cs" />
+    <Compile Include="Migrations\201608140101396_AddGigModel.Designer.cs">
+      <DependentUpon>201608140101396_AddGigModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Gig.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -252,6 +259,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608140035582_InitialModel.resx">
       <DependentUpon>201608140035582_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140101396_AddGigModel.resx">
+      <DependentUpon>201608140101396_AddGigModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
