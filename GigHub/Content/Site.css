@@ -152,6 +152,11 @@ h6,
             left: 70px;
         }
 
+            .gigs > li .details .venue {
+                font-weight: bold;
+                display: block;
+            }
+
             .gigs > li .details .artist {
                 font-weight: bold;
                 display: block;
