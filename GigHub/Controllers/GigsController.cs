@@ -51,13 +51,32 @@ namespace GigHub.Controllers
         }
 
         [Authorize]
+        public ActionResult Edit(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var gig = _context.Gigs.Single(g => g.Id == id && g.ArtistId == userId);
+
+            var viewModel = new GigFormViewModel
+            {
+                Genres = _context.Genres.ToList(),
+                Date = gig.DateTime.ToString("d MMM yyyy"),
+                Genre = gig.GenreId,
+                Time = gig.DateTime.ToString("HH:mm"),
+                Venue = gig.Venue,
+                Heading = "Edit a Gig"
+            };
+            return View("GigForm", viewModel);
+        }
+
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new GigFormViewModel
             {
-                Genres = _context.Genres.ToList()
+                Genres = _context.Genres.ToList(),
+                Heading = "Add a Gig"
             };
-            return View(viewModel);
+            return View("GigForm", viewModel);
         }
 
         [Authorize]
